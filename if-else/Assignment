@@ -1,1 +1,6 @@
+const username = prompt('Please enter your name.') || 'harsh'
+const age = +(prompt('Please enter your age.')) || 20
+console.log(`Name: ${username}`);
+console.log(`Age: ${age}`);
 
+console.log('code ended');
