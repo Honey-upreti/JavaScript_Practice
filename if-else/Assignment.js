@@ -1,8 +1,8 @@
 // Modify the code so that if a user cancels the prompt (or doesn't enter anything), the userName and userAge variables are assigned default values instead of being null or 0.
 const username = prompt('Please enter your name.') || 'harsh'
-const age = +(prompt('Please enter your age.')) || 20
+const userAge = +(prompt('Please enter your age.')) || 20
 console.log(`Name: ${username}`);
-console.log(`Age: ${age}`);
+console.log(`Age: ${userAge}`);
 
 if (userAge >= 0 && userAge <= 4) {
     console.log(`${username} is a kid.`);
