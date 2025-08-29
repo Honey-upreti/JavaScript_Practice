@@ -1,3 +1,6 @@
+// This example shows how the spread operator (...) creates a new array and copies the elements from the original. 
+// This is a shallow copy. 
+// Any changes to a nested object or array would affect the original, but since these are primitive values (strings), the original fruits array remains unchanged.
 // Initial array of fruits
 let fruits = ["Mango", "Apple", "Orange"];
 
