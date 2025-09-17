@@ -19,7 +19,7 @@ function introduceMe(username, profession) {
 // When the function is called, the values "Anurag" and "Software Developer" 
 // are passed as arguments for the `username` and `profession` parameters, respectively.
 introduceMe("Harshit", "Btech student");
-introduceMe("Lakshika", "Biology student");
+introduceMe("Dibyanshu", "Biology student");
 
 // The return statement allows a function to produce and send back a value.
 // This returned value can then be used in other parts of your code.
