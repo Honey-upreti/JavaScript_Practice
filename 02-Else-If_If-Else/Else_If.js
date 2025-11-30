@@ -7,7 +7,6 @@ if (userAge >= 0 && userAge <= 4) {
     console.log(`${username} is a kid.`);
     console.log('And he/she is playing.');
 }
-
 else if (userAge >= 5 && userAge <= 17) {
     console.log(`${username} is a school student.`);
     console.log('And he/she is learning science and maths.');
