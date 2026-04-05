@@ -11,6 +11,7 @@ switch (age) {
    case 5 :
    console.log('user age is 5');
 }
+
 console.log('Program ended');
 
 // 2nd case.
