@@ -1,6 +1,7 @@
 const username = prompt('Please Enter Your Name.');
 const userAge = parseInt(prompt('Please Enter Your Age.'));
 // we can also use '+' to convert string to number 
+
 console.log(`Name: ${username}`);
 console.log(`Age: ${userAge}`);
 
