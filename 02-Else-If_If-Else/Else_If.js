@@ -27,6 +27,7 @@ else if (userAge > 45) {
     console.log(`${username} is retired.`);
     console.log('And he/she reads newspaper.');
 }
+
 else {
     console.log('please enter a valid age');
 }    
