@@ -31,5 +31,6 @@ else if (userAge > 45) {
 else {
     console.log('please enter a valid age');
 }    
+
 console.log('code ended');
 
