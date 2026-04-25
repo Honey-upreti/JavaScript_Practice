@@ -30,7 +30,8 @@ console.log(`Age: ${userAge}`);
 // }
 // else {
 //     console.log('please enter a valid age');
-// }    
+// }   
+ 
 debugger
 switch (true) {
     case (userAge >= 0 && userAge <= 4) :
