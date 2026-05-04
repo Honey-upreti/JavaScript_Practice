@@ -43,7 +43,6 @@ switch (+age) {
    case 5 :
    console.log('user age is 5');
 }
-
 console.log('Program ended');
 
 // We can also use parseInt function to convert the string type to number type.
