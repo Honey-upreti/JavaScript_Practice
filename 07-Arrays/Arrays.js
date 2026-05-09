@@ -40,3 +40,4 @@ console.log('The removed fruit was:', removedFruit);
 // 6. Demonstrating .length property after modifications
 // The .length property is dynamic and automatically updates.
 console.log('Final array length:', fruits.length);
+

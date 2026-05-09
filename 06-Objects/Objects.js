@@ -17,3 +17,5 @@ const user = {
 }
 // Objects can contain other objects as values, allowing you to create complex, hierarchical data structures.
 // For e.g.- We have created moredetails inside address object
+
+// We can access the properties of an object using dot notation or bracket notation.
