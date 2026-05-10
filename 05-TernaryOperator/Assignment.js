@@ -3,5 +3,6 @@
 
 const age = 0 ? 'harshit' : '' ? 'hi' : "hello"
 console.log(age);
+
 // Output = "hello"
 // As 0 is a falsy value it will print empty string '', in further chain as '' is also a falsy value it will print "hello" in final output
