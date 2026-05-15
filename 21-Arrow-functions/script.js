@@ -16,7 +16,7 @@
 //     return num * num
 // }
 
-
+// implicit return
 const square = num =>
     num * num
 
