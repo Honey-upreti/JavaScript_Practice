@@ -1,19 +1,19 @@
-// const fruits = ['banana', 'apple', 'mango', 'peach','grapes']
+const fruits = ['banana', 'apple', 'mango', 'peach','grapes']
 
 // for(let i=0; i< fruits.length; i++) {
 //     console.log(fruits[i]); 
 // }
 
-// for(const fruit of fruits) {
-//     console.log(fruit);
-// }
+for(const fruit of fruits) {
+    console.log(fruit);
+}
 
 
 const user ="harsh"
 
-// for(const letter of user) {
-// console.log(letter);
-// }
+for(const letter of user) {
+console.log(letter);
+}
 
 const person = {
     firstName :"harsh",
