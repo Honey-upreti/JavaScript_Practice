@@ -23,5 +23,6 @@ function IntroduceMe() {
   console.log("hi my name is Harshit Upreti");
   IntroduceMe();
 }
+
 IntroduceMe();
 // This code will cause a stack overflow error because the IntroduceMe function is calling itself indefinitely. Each time the function is called, a new execution context is created and added to the call stack. Since there is no base case to stop the recursion, the call stack will eventually exceed its limit, resulting in a stack overflow error.
