@@ -1,19 +1,19 @@
-const fruits = ['banana', 'apple', 'mango', 'peach','grapes']
+// const fruits = ['banana', 'apple', 'mango', 'peach','grapes']
 
 // for(let i=0; i< fruits.length; i++) {
 //     console.log(fruits[i]); 
 // }
 
-for(const fruit of fruits) {
-    console.log(fruit);
-}
+// for(const fruit of fruits) {
+//     console.log(fruit);
+// }
 
 
-const user ="harsh"
+// const user ="harsh"
+// for(const letter of user) {
+// console.log(letter);
+// }
 
-for(const letter of user) {
-console.log(letter);
-}
 
 const person = {
     firstName :"harsh",
@@ -22,14 +22,14 @@ const person = {
     city : "Pithoragarh",
 }
 
-for(const key in person) {
-console.log(key,':',person[key]);
-}
+// for(const key in person) {
+// console.log(key,':',person[key]);
+// }
 
 const personKeys = Object.keys(person)
 for(key of personKeys) {
     console.log(person[key])
 }
 
-const personValues = Object.values(person)
-const entries = Object.entries(person)
+// const personValues = Object.values(person)
+// const entries = Object.entries(person)
