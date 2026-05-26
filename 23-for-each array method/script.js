@@ -4,7 +4,18 @@ const fruits = ['banana', 'apple', 'peach', 'mango', 'grapes']
 //     console.log(fruit);
 // }
 
-fruits.forEach(function () {
-    console.log('hi')
+// fruits.forEach(function (x) {
+//     console.log(x)
+// }
+// )
+
+fruits.forEach((x) => {
+    console.log(x)
 }
 )
+
+function abc(el) {
+    console.log(el);
+}
+
+fruits.forEach(abc)
