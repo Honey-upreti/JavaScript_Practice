@@ -18,7 +18,7 @@ const capital = months.map((month, index, array) => {
 // })
 
 const filteredMonth = months.filter((month, index, array) => {
-    console.log(month)
+    // console.log(month)
     // console.log(array)
     return index >= 3
 })
@@ -46,6 +46,10 @@ const students = [
     },
 ]
 
-const adult = students.filter((student)=>{
-    return student.age>=18
+const adult = students.filter((student) => {
+    return student.age >= 18
+}).map((student) => {
+    return student.Name
+}).filter((student) =>{
+    return student.includes('G')
 })
