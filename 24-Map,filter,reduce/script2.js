@@ -1,7 +1,7 @@
-const nums = [1,2,3]
+const nums = [140,2,3]
 
 nums.reduce((accumulator, current, index)=>{
     // console.log(index,current)
-    console.log(accumulator)
-    return accumulator + current
-},0)
+    console.log(accumulator, current)
+    return accumulator+current 
+},20)
