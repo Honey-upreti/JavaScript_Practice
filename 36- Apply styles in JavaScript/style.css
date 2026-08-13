@@ -1,0 +1,43 @@
+#css-image {
+  border: 4px solid green;
+}
+
+[alt="javascript roadmap"] {
+  border: 4px solid hotpink;
+}
+
+/* p b { */
+/* display: none; */
+/* visibility: hidden; */
+/* opacity: 0; */
+/* pointer-events: none; */
+/* } */
+
+[harshit="upreti"] {
+  background-color: burlywood;
+}
+
+#heading {
+  color: teal;
+}
+
+h1 {
+  color: red;
+  /* font-family: cursive;
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 700; */
+}
+
+.green-link {
+  color: red;
+  font-family: cursive;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.wavy-line {
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
