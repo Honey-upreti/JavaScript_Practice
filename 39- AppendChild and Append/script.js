@@ -3,7 +3,7 @@ const container = document.querySelector(".container")
 const card = document.querySelector('.card')
 
 // container.appendChild(h1)
-// container.appendChild(h1.cloneNode(true))
+container.appendChild(h1.cloneNode(true))
 
 for (let i = 2; i <= 100; i++) {
     const newcard = card.cloneNode()
