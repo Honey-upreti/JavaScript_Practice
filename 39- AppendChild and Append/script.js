@@ -5,8 +5,8 @@ const card = document.querySelector('.card')
 // container.appendChild(h1)
 // container.appendChild(h1.cloneNode(true))
 
-// for(let i = 2; i<=100; i++){
-//     const newcard = card.cloneNode()
-//     newcard.innerText = i
-//     container.appendChild(newcard)
-// }
+for (let i = 2; i <= 100; i++) {
+    const newcard = card.cloneNode()
+    newcard.innerText = i
+    container.appendChild(newcard)
+}
