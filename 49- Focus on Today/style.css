@@ -1,0 +1,28 @@
+body {
+    background-color: rgba(72, 163, 0, 0.07);
+    font-family: 'Poppins',sans-serif;
+}
+
+.title{
+    font-size: 4rem;
+    color: rgba(72, 163, 0, 1);
+    text-align: center;
+}
+
+.title span {
+    color: rgba(97, 72, 28, 1);
+}
+
+.app-container {
+    background-color: rgba(251, 251, 251, 1);
+    max-width: 669px;
+    margin-inline: auto;
+    border-radius: 15px;
+    padding: 32px 42px ;
+    box-shadow: 0 0 8px 0px rgba(0,0,0,0.1);
+}
+
+.sun-icon {
+    vertical-align: middle;
+    margin-left: 16px;
+}
