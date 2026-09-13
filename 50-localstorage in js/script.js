@@ -1,6 +1,6 @@
 const nameElement = document.querySelector('.name-tag')
 const nameInput = document.querySelector('.name')
-nameElement.innerText = localStorage.getItem('myName')  
+nameElement.innerText = localStorage.getItem('myName')
 // this is when we reload, to hold the text
 const ageInput = document.querySelector('.age')
 const ageElement = document.querySelector('.age-tag')
@@ -22,20 +22,27 @@ const ageElement = document.querySelector('.age-tag')
 
 // })
 
-const mydata = JSON.parse(localStorage.getItem('mydata'))  || {}
+const mydata = JSON.parse(localStorage.getItem('mydata')) || {}
 
-nameInput.addEventListener('input',(e)=>{
+if (mydata.name) {
+    nameElement.innerText = mydata.name
+}
+
+if (mydata.age) {
+    ageElement.innerText = mydata.age
+}
+
+nameInput.addEventListener('input', (e) => {
     mydata.name = e.target.value
     localStorage.setItem('mydata', JSON.stringify(mydata))
     nameElement.innerText = e.target.value
 
 })
 
-ageInput.addEventListener('input',(e)=>{
-     mydata.age = e.target.value
+ageInput.addEventListener('input', (e) => {
+    mydata.age = e.target.value
     localStorage.setItem('mydata', JSON.stringify(mydata))
     ageElement.innerText = e.target.value
 })
 
-ageElement.innerHTML = mydata.age
-nameElement.innerText = mydata.name
+// localStorage.removeItem('mydata')
