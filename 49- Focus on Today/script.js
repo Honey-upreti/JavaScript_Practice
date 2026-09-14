@@ -1,9 +1,32 @@
 const checkbox = document.querySelectorAll('.custom-checkbox')
 // const goalContainer = document.querySelectorAll('.goal-container')
-const inputfield = document.querySelectorAll('#goal-input')
+const inputfield = document.querySelectorAll('.goal-input')
 const errorLabel = document.querySelector('.error-label')
 const progressBar = document.querySelector('.progress-bar')
 const progressValue = document.querySelector('.progress-value')
+const progresslabel = document.querySelector('.progress-label')
+
+const allquotes = ['Raise the bar by completing your goal!', 'Halfway done!', 'Just a step away, keep going!', 'Whoa! you just completed your all goals, Rest now king!']
+
+const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {
+    first: {
+        name: '',
+        completed: false
+    },
+    second: {
+        name: '',
+        completed: false
+    },
+    third: {
+        name: '',
+        completed: false
+    }
+}
+let completedgoalscount = Object.values(allGoals).filter((goals) => goals.completed).length
+progressValue.style.width = `${completedgoalscount / 3 * 100}%`
+progressValue.firstElementChild.innerText = `${completedgoalscount}/3 completed`
+
+progresslabel.innerText = allquotes[completedgoalscount]
 
 
 checkbox.forEach((checkbox) => {
@@ -14,16 +37,35 @@ checkbox.forEach((checkbox) => {
         })
         if (allgoalsadded) {
             checkbox.parentElement.classList.toggle('completed');
-            progressValue.style.width = '33%'
-            progressValue
-        } else{
+            const inputId = checkbox.nextElementSibling.id
+            // console.log(allGoals[inputId]);
+            allGoals[inputId].completed = !allGoals[inputId].completed
+            completedgoalscount = Object.values(allGoals).filter((goals) => goals.completed).length
+            progressValue.style.width = `${completedgoalscount / 3 * 100}%`
+            progressValue.firstElementChild.innerText = `${completedgoalscount}/3 completed`
+            progresslabel.innerText = allquotes[completedgoalscount]
+            localStorage.setItem('allGoals', JSON.stringify(allGoals))
+        } else {
             progressBar.classList.add('show-error')
         }
     })
 })
 
-inputfield.forEach((input)=>{
-    input.addEventListener('focus',()=>{
+inputfield.forEach((input) => {
+    // console.log(allGoals[input.id]);
+    input.value = allGoals[input.id].name
+    if (allGoals[input.id].completed) {
+        input.parentElement.classList.add('completed')
+    }
+    input.addEventListener('focus', () => {
         progressBar.classList.remove('show-error')
+    })
+    input.addEventListener('input', (e) => {
+        if (allGoals[input.id].completed) {
+            input.value = allGoals[input.id].name
+            return
+        }
+        allGoals[input.id].name= input.value
+        localStorage.setItem('allGoals', JSON.stringify(allGoals))
     })
 })
