@@ -8,23 +8,10 @@ const progresslabel = document.querySelector('.progress-label')
 
 const allquotes = ['Raise the bar by completing your goal!', 'Halfway done!', 'Just a step away, keep going!', 'Whoa! you just completed your all goals, Rest now king!']
 
-const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {
-    first: {
-        name: '',
-        completed: false
-    },
-    second: {
-        name: '',
-        completed: false
-    },
-    third: {
-        name: '',
-        completed: false
-    }
-}
+const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {}
 let completedgoalscount = Object.values(allGoals).filter((goals) => goals.completed).length
-progressValue.style.width = `${completedgoalscount / 3 * 100}%`
-progressValue.firstElementChild.innerText = `${completedgoalscount}/3 completed`
+progressValue.style.width = `${completedgoalscount / inputfield.length * 100}%`
+progressValue.firstElementChild.innerText = `${completedgoalscount}/${inputfield.length} completed`
 
 progresslabel.innerText = allquotes[completedgoalscount]
 
@@ -41,8 +28,8 @@ checkbox.forEach((checkbox) => {
             // console.log(allGoals[inputId]);
             allGoals[inputId].completed = !allGoals[inputId].completed
             completedgoalscount = Object.values(allGoals).filter((goals) => goals.completed).length
-            progressValue.style.width = `${completedgoalscount / 3 * 100}%`
-            progressValue.firstElementChild.innerText = `${completedgoalscount}/3 completed`
+            progressValue.style.width = `${completedgoalscount / inputfield.length * 100}%`
+            progressValue.firstElementChild.innerText = `${completedgoalscount}/${inputfield.length} completed`
             progresslabel.innerText = allquotes[completedgoalscount]
             localStorage.setItem('allGoals', JSON.stringify(allGoals))
         } else {
@@ -53,19 +40,29 @@ checkbox.forEach((checkbox) => {
 
 inputfield.forEach((input) => {
     // console.log(allGoals[input.id]);
-    input.value = allGoals[input.id].name
-    if (allGoals[input.id].completed) {
-        input.parentElement.classList.add('completed')
+    if (allGoals[input.id]) {
+        input.value = allGoals[input.id].name
+        if (allGoals[input.id].completed) {
+            input.parentElement.classList.add('completed')
+        }
     }
+
     input.addEventListener('focus', () => {
         progressBar.classList.remove('show-error')
     })
     input.addEventListener('input', (e) => {
-        if (allGoals[input.id].completed) {
+        if (allGoals[input.id] && allGoals[input.id].completed) {
             input.value = allGoals[input.id].name
             return
         }
-        allGoals[input.id].name= input.value
+        if (allGoals[input.id]) {
+            allGoals[input.id].name = input.value
+        } else {
+            allGoals[input.id] = {
+                name: input.value,
+                completed: false
+            }
+        }
         localStorage.setItem('allGoals', JSON.stringify(allGoals))
     })
 })
