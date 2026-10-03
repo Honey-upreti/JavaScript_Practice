@@ -1,42 +1,19 @@
 const container = document.querySelector('.container')
+const button = document.querySelector('button')
 
-
-
-// img.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"
-
-// paragraph.innerText = '2'
-
-// imgContainer.append(img,paragraph)
-
-for (let i = 1; i <= 100; i++) {
-            const imgContainer = document.createElement('div')
-    imgContainer.classList.add('img-container')
-    const img = document.createElement('img')
-    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`
+// let i = 1
+button.addEventListener('click',()=>{
+            fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random()*1000)+1}`)
+  .then(response => response.json())
+  .then(json => {console.log(json)
+    const imagecontainer = document.createElement('div')
+    const image = document.createElement('img')
     const paragraph = document.createElement('p')
-    paragraph.innerText = i
-    imgContainer.append(img,paragraph)
-    container.appendChild(imgContainer)
+    image.src = json.sprites.front_default;
+    paragraph.innerText = json.name
+    imagecontainer.append(image,paragraph)
+    container.appendChild(imagecontainer)
+  })
+//   i++
+})
 
-
-//     // const myhtml = `<img
-//     //       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png"
-//     //     />
-//     //     <p>${i}</p>`
-
-//     // imgContainer.innerHTML = myhtml
-}
-
-
-// let myhtml = ``
-
-// for (let i = 1; i <= 10; i++) {
-//     myhtml += `<div class="img-container">
-//         <img
-//           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png"
-//         />
-//         <p>${i}</p>
-//         </div>`
-//         container.innerHTML = myhtml
-
-// }
