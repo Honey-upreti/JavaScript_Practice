@@ -14,6 +14,14 @@ const p = new Promise((resolve, reject) => {
 
 p.then((data) => {
   console.log(data);
+  return 15
+}).then((data)=>{
+  console.log(data);
+  return 10
+}).then((data)=>{
+  console.log(data);
+  return "harshit"
 }).catch((error)=>{
-    console.log(error);
+  console.log(error);
+  return 105
 })
