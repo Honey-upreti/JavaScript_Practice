@@ -19,6 +19,9 @@ async function makeRequest() {
     try{
         const url = "https://httpbin.org/delay/2";
     const response = await fetch(url)
+    if(response.ok == false){
+        throw new Error('error')
+    }
    const data = await response.json()
     console.log(data);
     console.log("hii")
@@ -26,6 +29,8 @@ async function makeRequest() {
     }
     catch(err){
         console.log(err);
+    }finally{
+        console.log("Request finished");
     }
 }
 makeRequest()
