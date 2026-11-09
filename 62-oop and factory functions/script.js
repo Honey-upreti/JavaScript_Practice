@@ -1,14 +1,29 @@
+// function createuser(name, age) {
+//   const user = {
+//     name,
+//     age,
+//     // getbirthYear: createuser.commonMethods.getYear,
+//   };
+//   return user;
+// }
 
-function createuser(name,age){
-    const user = {
-     name,
-     age,
-     getYear(){
-         return new Date().getFullYear() - user.age
-        }
-    }
-    return user
+// createuser.commonMethods = {
+//   getYear() {
+//     return new Date().getFullYear() - this.age;
+//   },
+// };
+
+function Createuser(name, age) {
+  this.name = name;
+  this.age = age;
 }
 
-const user1 = createuser('harsh',20)
-const user2 = createuser('aman', 21)
+
+Createuser.prototype.getYear= function() {
+    return new Date().getFullYear() - this.age;
+  }
+
+
+const user1 = new Createuser("harsh", 20);
+const user2 = new Createuser("aman", 21);
+
